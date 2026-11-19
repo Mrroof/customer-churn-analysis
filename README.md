@@ -1,23 +1,42 @@
 # Customer Churn and Retention Analysis
 
-## Objective
-Explore customer attributes associated with churn and demonstrate a basic classification workflow.
+> **Portfolio case study · Python · pandas · scikit-learn · Matplotlib**
 
-## Data notice
-The included customer records are **synthetic demonstration data**, not real customer information. Do not describe results as findings from a real telecom or bank.
+## Executive summary
+This project examines customer churn patterns in a synthetic subscription dataset and builds a baseline classification model to identify records associated with churn.
 
-## Questions
-- What is the demo churn rate?
-- How does churn differ by contract type?
-- How are tenure, charges and support contacts associated with churn?
-- How does logistic regression perform on a held-out sample?
+## Business questions
+- What proportion of the demo customer base churned?
+- How does churn differ across contract types?
+- How well does a logistic regression model distinguish churn from retention?
 
-## Run
+## Demonstration findings
+- Dataset size: **1,000 synthetic customer records**.
+- Overall demo churn rate: **48%**.
+- Month-to-month contracts had a **58.5%** churn rate, compared with **39.0%** for one-year and **26.6%** for two-year contracts.
+- Held-out model accuracy: **72%**; ROC AUC: **0.778**.
+- Churn-class precision: **72%**; recall: **70%**.
+
+<image src="docs/churn-by-contract.svg" alt="Synthetic churn rate by contract type" />
+
+These are patterns in the generated dataset, not evidence that contract length causes churn.
+
+## Method
+1. Inspect data quality and churn distribution.
+2. Explore churn by contract type and selected customer attributes.
+3. Train a logistic regression classifier.
+4. Evaluate using a held-out sample, class-level precision/recall and ROC AUC.
+
+## Run locally
 ```bash
 pip install -r requirements.txt
 python src/analyze_churn.py
 ```
+
 Outputs are saved in `outputs/`.
 
+## Business interpretation
+The synthetic contract pattern suggests a useful retention question: should month-to-month customers receive earlier engagement or clearer renewal options? This is a hypothesis to test with genuine customer data, not a recommendation to deploy directly.
+
 ## Limitations
-A production retention model requires representative data, leakage checks, calibration, fairness assessment, cost-sensitive evaluation and business validation.
+The data is synthetic and does not contain real customer records. Model metrics are illustrative. A production churn model requires representative data, leakage checks, probability calibration, time-based validation, fairness review, cost-sensitive evaluation and business validation.
