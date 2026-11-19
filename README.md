@@ -42,3 +42,17 @@ The synthetic contract pattern suggests a useful retention question: should mont
 
 ## Limitations
 The data is synthetic and does not contain real customer records. Model metrics are illustrative. A production churn model requires representative data, leakage checks, probability calibration, time-based validation, fairness review, cost-sensitive evaluation and business validation.
+
+## Repository structure
+
+```text
+data/customer_churn_demo.csv    # Synthetic customer records
+src/analyze_churn.py            # EDA and baseline classifier
+docs/churn-by-contract.svg      # Churn comparison chart
+requirements.txt                # Python dependencies
+.github/workflows/              # Automated repository validation
+```
+
+## Reproducibility
+
+Run the command above from the repository root. The script regenerates analysis outputs locally in `outputs/`; generated outputs are not committed by default. The GitHub Actions validation workflow checks the project on repository updates.
