@@ -28,18 +28,20 @@ plt.savefig(out / "churn_by_contract.png", dpi=160)
 plt.close()
 
 features = [
-    "tenure_months", "monthly_charges", "support_tickets_90d",
-    "contract_type", "internet_service"
+    "tenure_months", "monthly_charges", "contract_type",
+    "tech_support", "internet_service"
 ]
+num = ["tenure_months", "monthly_charges"]
+cat = ["contract_type", "tech_support", "internet_service"]
 prep = ColumnTransformer([
     ("num", Pipeline([
         ("impute", SimpleImputer(strategy="median")),
         ("scale", StandardScaler())
-    ]), ["tenure_months", "monthly_charges", "support_tickets_90d"]),
+    ]), num),
     ("cat", Pipeline([
         ("impute", SimpleImputer(strategy="most_frequent")),
         ("onehot", OneHotEncoder(handle_unknown="ignore"))
-    ]), ["contract_type", "internet_service"])
+    ]), cat)
 ])
 pipe = Pipeline([
     ("prep", prep),
