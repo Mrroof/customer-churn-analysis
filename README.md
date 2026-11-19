@@ -1,3 +1,5 @@
+[![Portfolio validation](https://github.com/Mrroof/customer-churn-analysis/actions/workflows/portfolio-validation.yml/badge.svg)](https://github.com/Mrroof/customer-churn-analysis/actions)
+
 # Customer Churn and Retention Analysis
 
 > **Portfolio case study · Python · pandas · scikit-learn · Matplotlib**
@@ -17,7 +19,7 @@ This project examines customer churn patterns in a synthetic subscription datase
 - Held-out model accuracy: **72%**; ROC AUC: **0.778**.
 - Churn-class precision: **72%**; recall: **70%**.
 
-<image src="docs/churn-by-contract.svg" alt="Synthetic churn rate by contract type" />
+![Synthetic churn rate by contract type](docs/churn-by-contract.svg)
 
 These are patterns in the generated dataset, not evidence that contract length causes churn.
 
