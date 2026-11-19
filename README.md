@@ -56,3 +56,18 @@ requirements.txt                # Python dependencies
 ## Reproducibility
 
 Run the command above from the repository root. The script regenerates analysis outputs locally in `outputs/`; generated outputs are not committed by default. The GitHub Actions validation workflow checks the project on repository updates.
+
+## Business insights
+
+- The synthetic sample has a **48%** overall churn rate.
+- Month-to-month customers show **58.5%** churn, compared with **39.0%** for one-year contracts and **26.6%** for two-year contracts.
+- The baseline logistic regression achieves **72%** held-out accuracy and **0.778 ROC AUC**, indicating useful separation in this generated dataset, but not proof of real-world performance.
+- The contract pattern is an association in the sample. It does not establish that changing a customer's contract will itself prevent churn.
+
+## Practical recommendations
+
+1. Use contract type as a starting point for retention investigation, not as the sole trigger for intervention.
+2. Examine churn alongside tenure, service issues, monthly charges, payment experience and customer feedback.
+3. Test targeted retention offers or service interventions with a controlled comparison group.
+4. Measure retained customer value and intervention cost, not just the number of customers retained.
+5. Validate the model on real, time-ordered customer data before operational use and review for uneven impact across customer groups.
